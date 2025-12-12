@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/topic_model.dart';
 
 class TopicRepository {
-  static List<Topic> getTopics() {
+  static List<Topic> getTopicsMain() {
     return [
       Topic(
         title: 'Flutter Básico',

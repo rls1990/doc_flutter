@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final topics = TopicRepository.getTopics(); // Obtiene los datos
+    final topics = TopicRepository.getTopicsMain(); // Obtiene los datos
     return MainLayout(
       child: ListView.builder(
         itemCount: topics.length,
