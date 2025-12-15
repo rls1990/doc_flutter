@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
             progress: topic.progress,
             topics: topic.topics,
             color: topic.color,
+            url: topic.url,
           );
         },
       ),

@@ -1,4 +1,5 @@
 // lib/routes/app_router.dart
+import 'package:doc_flutter/screens/basic-dart/basic_dart.dart';
 import 'package:go_router/go_router.dart';
 import 'package:doc_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +13,19 @@ class AppRoutes {
       GoRoute(
         path: '/',
         name: 'home',
-        builder: (context, state) => const HomeScreen(),
+        //builder: (context, state) => const HomeScreen(),
+        pageBuilder: (context, state) =>
+            NoTransitionPage(key: state.pageKey, child: const HomeScreen()),
         routes: [
-        ]
+          GoRoute(
+            path: 'basic-dart',
+            name: 'basic-dart',
+            // builder: (context, state) => const BasicDart(),
+            pageBuilder: (context, state) =>
+                NoTransitionPage(key: state.pageKey, child: const BasicDart()),
+            routes: [],
+          ),
+        ],
       ),
     ],
 

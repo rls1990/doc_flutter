@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class TopicCard extends StatelessWidget {
   final String title;
@@ -6,6 +7,7 @@ class TopicCard extends StatelessWidget {
   final double progress;
   final int topics;
   final Color color;
+  final String url;
 
   const TopicCard({
     super.key,
@@ -14,6 +16,7 @@ class TopicCard extends StatelessWidget {
     required this.topics,
     this.color = Colors.blueAccent,
     this.progress = 0,
+    this.url = "/",
   });
 
   @override
@@ -50,6 +53,7 @@ class TopicCard extends StatelessWidget {
         trailing: const Icon(Icons.arrow_forward_ios),
         onTap: () {
           // Navegar a subtemas
+          context.go(url);
         },
       ),
     );

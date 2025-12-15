@@ -6,6 +6,7 @@ class Topic {
   final double progress;
   final int topics;
   final Color color;
+  final String url;
 
   const Topic({
     required this.title,
@@ -13,5 +14,6 @@ class Topic {
     required this.progress,
     required this.topics,
     required this.color,
+    required this.url,
   });
 }
