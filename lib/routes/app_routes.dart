@@ -14,8 +14,18 @@ class AppRoutes {
         path: '/',
         name: 'home',
         //builder: (context, state) => const HomeScreen(),
-        pageBuilder: (context, state) =>
-            NoTransitionPage(key: state.pageKey, child: const HomeScreen()),
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            key: const ValueKey('home'), // Key constante
+            child: const HomeScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return child; // Sin transición
+                },
+            transitionDuration: Duration.zero,
+            maintainState: false, // ¡IMPORTANTE! No mantener en cache
+          );
+        },
         routes: [
           GoRoute(
             path: 'basic-dart',

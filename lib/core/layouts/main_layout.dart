@@ -19,7 +19,6 @@ class MainLayout extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return Scaffold(
-      key: ValueKey(title), // ✅ Key única basada en el título
       backgroundColor: colors.surface,
       appBar: AppBar(
         title: TweenAnimationBuilder<double>(
@@ -28,7 +27,10 @@ class MainLayout extends StatelessWidget {
           builder: (context, value, child) {
             return Opacity(
               opacity: value,
-              child: Text(title, style: TextStyle(color: colors.onPrimary)),
+              child: Transform.translate(
+                offset: Offset(20 * (1 - value), 0), // Simple slide
+                child: Text(title, style: TextStyle(color: colors.onPrimary)),
+              ),
             );
           },
         ),
