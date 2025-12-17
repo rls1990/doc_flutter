@@ -1,5 +1,11 @@
 // lib/routes/app_router.dart
+import 'package:doc_flutter/screens/advanced-dart/advanced_dart.dart';
+import 'package:doc_flutter/screens/animations/animations.dart';
+import 'package:doc_flutter/screens/api-integration/api_integration.dart';
 import 'package:doc_flutter/screens/basic-dart/basic_dart.dart';
+import 'package:doc_flutter/screens/basic-flutter/basic_flutter.dart';
+import 'package:doc_flutter/screens/state-management/state_management.dart';
+import 'package:doc_flutter/screens/testing/testing.dart';
 import 'package:go_router/go_router.dart';
 import 'package:doc_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +39,64 @@ class AppRoutes {
             // builder: (context, state) => const BasicDart(),
             pageBuilder: (context, state) =>
                 NoTransitionPage(key: state.pageKey, child: const BasicDart()),
+            routes: [],
+          ),
+          GoRoute(
+            path: 'advanced-dart',
+            name: 'advanced-dart',
+            // builder: (context, state) => const BasicDart(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const AdvancedDart(),
+            ),
+            routes: [],
+          ),
+          GoRoute(
+            path: 'basic-flutter',
+            name: 'basic-flutter',
+            // builder: (context, state) => const BasicDart(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const BasicFlutter(),
+            ),
+            routes: [],
+          ),
+          GoRoute(
+            path: 'state-management',
+            name: 'state-management',
+            // builder: (context, state) => const BasicDart(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const StateManagement(),
+            ),
+            routes: [],
+          ),
+          GoRoute(
+            path: 'api-integration',
+            name: 'api-integration',
+            // builder: (context, state) => const BasicDart(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const ApiIntegration(),
+            ),
+            routes: [],
+          ),
+          GoRoute(
+            path: 'animations',
+            name: 'animations',
+            // builder: (context, state) => const BasicDart(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const AnimationsFlutter(),
+            ),
+            routes: [],
+          ),
+          GoRoute(
+            path: 'testing',
+            name: 'testing',
+            // builder: (context, state) => const BasicDart(),
+            pageBuilder: (context, state) =>
+                NoTransitionPage(key: state.pageKey, child: const Testing()),
             routes: [],
           ),
         ],
