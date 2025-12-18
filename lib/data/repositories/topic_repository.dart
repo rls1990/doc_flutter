@@ -63,4 +63,17 @@ class TopicRepository {
       ),
     ];
   }
+
+  static List<Topic> getTopicsBasicDart() {
+    return [
+      Topic(
+        title: 'Dart Básico | Variables',
+        subtitle: 'genericas, numericas, dinamicas ....',
+        progress: 0.4,
+        topics: 7,
+        color: Colors.indigoAccent,
+        url: "/basic-dart/variables",
+      ),
+    ];
+  }
 }
